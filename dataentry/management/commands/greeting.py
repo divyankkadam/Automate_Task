@@ -5,7 +5,8 @@ from django.core.management.base import BaseCommand
 class Command(BaseCommand):
     help = "Gretting Command"   # command level help text
 
-    def add_arguments(self, parser): 
+    def add_arguments(self, parser):  # parser - allow to take arguemnt with command
+        
         parser.add_argument('name' , type=str , help='Sepecificy user name')  # argument level help text 
 
 
