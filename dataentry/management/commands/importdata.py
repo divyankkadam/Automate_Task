@@ -28,10 +28,10 @@ class Command(BaseCommand):
                 continue                                                     # model not found in this app , continue searching in app
 
         if not model:
-            raise CommandError(f"Model {model_name} not found in any app")   # to provide a clean, readable failure message to the user in the termina
+            raise CommandError(f"Model {model_name} not found in any app")   # to provide a clean, readable failure message to the user in the terminal
 
         with open(file_path , 'r') as file:
-            reader = csv.DictReader(file)                                    # DictReader - reading a CSV file and mapping the information in each row to a dictionary
+            reader = csv.DictReader(file)                                    # DictReader - reading a CSV file and mapping the information in each row to a dictionary and return a iterator
             for row in reader:
                 model.objects.create(**row)
         self.stdout.write(self.style.SUCCESS("Data imported from csv successfuly Successfully!"))
