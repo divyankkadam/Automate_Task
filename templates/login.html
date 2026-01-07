@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container mt-5 p-3 shadow rounded" style="max-width: 600px; padding:50px;">
+    <h2 class="text-ceter" style="padding-bottom: 10px">Login</h2>
+    <form action="{% url 'login' %}" method="POST" >
+        {% csrf_token %}
+
+        {{ form | crispy }}
+
+        <input type="submit" value="login" class="btn btn-warning">
+    </form>
+    {% include 'alerts.html' %}
+</div>
+
+{% endblock %}

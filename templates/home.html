@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container" style="padding: 50px;">
-    <h2 class="text-center">Automate The Boring Stuff With Django</h2>
+    {% if user.is_authenticated %}
     <div class="row pt-5">
         <!-- Import data -->
         <div class="col-md-4">
@@ -89,5 +89,21 @@
             </a>
         </div>
     </div>
+    {% else %}
+
+    <div class='home-info'>
+        <h2 class="text-center">Automate the Boring Stuff with Django</h2>
+        <p class="lead text-center text-muted ">
+            django
+        </p>
+
+        <div style="display: flex; justify-content: center; ">
+            <a href="{% url 'login' %}" class="btn btn-warning">LOGIN</a>
+            &nbsp;<a href="{% url 'register' %}" class="btn btn-success">register</a>
+        </div>
+    </div>
+    {% endif %}
+
+
 </div>
 {% endblock %}
