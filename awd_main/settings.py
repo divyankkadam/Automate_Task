@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config        # python-decouple is a small library that helps you keep secret values out of your code and read them safely from environment variables or a .env file.
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j@m_w3o($+9c%d3(blh1$j7-=vt_lien2c+@@3)m&9pjh$hp(%'
-
+SECRET_KEY = config('SECRET_KEY')
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False , cast=bool) #True or False
 
 ALLOWED_HOSTS = []
 
@@ -116,7 +117,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    'awd_main/static',
+]
+
+# only for production
+STATIC_ROOT = BASE_DIR/'static'
 
 #Media Fiels Configurations
 MEDIA_URL = '/media/'
@@ -129,3 +137,15 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
     50: "critical",
 }
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+
+
+# Email Configuration 
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT' , cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True 
+DEFAULT_FROM_EMAIL = 'Automate with Django <divyankkadam800@gmail.com>'
+DEFAULT_TO_EMAIL = 'divyankkadam880@gmail.com'
