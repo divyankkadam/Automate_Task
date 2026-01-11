@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container mt-5 p-3 shadow rounded" style="max-width: 600px;">
+<div class="container mt-5 p-3 shadow rounded alert-info" style="max-width: 600px;">
     <h2 class="text-ceter" style="padding-bottom: 10px">Send Emial</h2>
     <form action="{% url 'send_email' %}" method="POST" enctype="multipart/form-data">   <!-- incase working with file should include enctype -->
         {% csrf_token %}
@@ -13,6 +13,7 @@
         <input type="submit" value="Send" class="btn btn-success">
         
     </form>
+
     {% include 'alerts.html' %}
 </div>
 

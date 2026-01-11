@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False , cast=bool) #True or False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'emails',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -150,18 +151,22 @@ EMAIL_PORT = config('EMAIL_PORT' , cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True 
-DEFAULT_FROM_EMAIL = 'Automate with Django <divyankkadam800@gmail.com>'
-DEFAULT_TO_EMAIL = 'divyankkadam880@gmail.com'
+DEFAULT_FROM_EMAIL = 'Automate with Django <divyankkadam880@gmail.com>'
+DEFAULT_TO_EMAIL = 'divyankkadam800@gmail.com'
 
 
 CRISPY_TEMPLATE_PACK = 'Bootstrap5'
 
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'height': 200,
+        
+    },
+}
 
-
-
-
-
+CSRF_TRUSTED_ORIGINS = ['https://integrally-multicircuited-cara.ngrok-free.dev']
+BASE_URL = 'https://integrally-multicircuited-cara.ngrok-free.dev'
 
 
 
