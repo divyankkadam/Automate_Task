@@ -1,94 +1,82 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" style="padding: 50px;">
+<div class="container" style="padding: 30px;">
     {% if user.is_authenticated %}
-    <div class="row pt-5">
+    
+    <div class="row row-cols-1 pt-3 justify-content-center ">
         <!-- Import data -->
-        <div class="col-md-4">
+        <div class="col-md-5">
             <a href="{% url 'import_data' %}" class="text-decoration-none text-dark">
                 <div class="card alert-primary shadow">
                     <div class="card-header">
                     <h4>Import Data</h4>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">Import data from CSV file to Database (any table).</p>
+                    <p class="card-text">Import CSV files directly into your database with ease.</p>
                     </div>
                 </div>
             </a>
         </div>
         <!-- Export Data -->
-        <div class="col-md-4">
+        <div class="col-md-5">
             <a href="{% url 'export_data' %}" class="text-decoration-none text-dark">
                 <div class="card alert-success shadow">
                     <div class="card-header">
                     <h4>Export Data</h4>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">Exports data from a specific table to a CSV file.</p>
+                    <p class="card-text">Export data from any model and receive it as a CSV via email.</p>
                     </div>
                 </div>
             </a>
         </div>
-
+    </div>
+    <div class="row row-cols-1 pt-4 justify-content-center">
         <!-- Bulk Emails -->
-        <div class="col-md-4">
+        <div class="col-md-5">
             <a href="{% url 'send_email' %}" class="text-decoration-none text-dark">
                 <div class="card alert-info shadow">
                     <div class="card-header">
                     <h4>Bulk Emails</h4>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">Sends bulk emails to Thousand of users</p>
+                    <p class="card-text">Send mass emails to thousands of users in just one click.</p>
                     </div>
                 </div>
             </a>
         </div>
-    </div>
-
-    <div class="row pt-5">
+    
         <!-- Email Tracking -->
-        <div class="col-md-4">
+        <div class="col-md-5">
             <a href="{% url 'track_dashboard' %}" class="text-decoration-none text-dark">
                 <div class="card alert-warning shadow">
                     <div class="card-header">
                     <h4>Email Tracking</h4>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">Tracks emails and shows open and click rate</p>
+                    <p class="card-text">Track email opens and link clicks with real-time insights.</p>
                     </div>
                 </div>
             </a>
         </div>
-        
+    <div>
+
+    <div class="row row-cols-1  pt-4 justify-content-center">
      <!-- Compress Images -->
         <div class="col-md-4">
-            <a href="#" class="text-decoration-none text-dark">
+            <a href="{% url 'compress' %}" class="text-decoration-none text-dark">
                 <div class="card alert-danger shadow">
                     <div class="card-header">
                     <h4>Compress Images</h4>
                     </div>
                     <div class="card-body">
-                    <p class="card-text">Compresses Image files and reduces the size</p>
+                    <p class="card-text">Reduce image size without losing quality.</p>
                     </div>
                 </div>
             </a>
         </div>
 
-     <!-- Web Scraping -->
-        <div class="col-md-4">
-            <a href="#" class="text-decoration-none text-dark">
-                <div class="card alert-warning shadow">
-                    <div class="card-header">
-                    <h4>Web Scraping</h4>
-                    </div>
-                    <div class="card-body">
-                    <p class="card-text">Scrapes websites for useful information</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
     {% else %}
 
     <div class='home-info'>

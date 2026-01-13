@@ -93,7 +93,7 @@ def track_open(request, unique_id ):
 
 
 def track_dashboard(request):
-    emails = Email.objects.all().annotate(total_sent=Sum('sent__total_sent')).order_by('-sent_at')
+    emails = Email.objects.all().annotate(total_sent=Sum('sent__total_sent')).order_by('-send_at')
 
     context = {
         'emails' : emails,

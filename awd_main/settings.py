@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'emails',
-    'ckeditor'
+    'ckeditor',
+    'image_compression'
 ]
 
 MIDDLEWARE = [
