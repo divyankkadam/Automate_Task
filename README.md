@@ -8,9 +8,7 @@ through a user-friendly interface.
 
 <hr>
 
-<h2>📸 Project Preview</h2>
 <img src="https://github.com/user-attachments/assets/d3e06d79-71d2-4fe4-be98-a9508831b812"  width="600" />
-
 
 <hr>
 
