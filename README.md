@@ -1,5 +1,5 @@
 <h1>Software Automation Tools</h1>
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0f209861-e356-4f6b-b075-427876dcebae" />
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/0f209861-e356-4f6b-b075-427876dcebae" />
 
 A web-based platform that integrates multiple software automation tools into one system to simplify repetitive tasks and improve productivity. The project provides automated solutions like email automation, file processing, and background task execution through a user-friendly interface you will integrate in your website to automate the repitative task
 
